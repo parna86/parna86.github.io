@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200&family=Lobster&display=swap');
+/*css rule for above: font-family: 'Lobster', cursive; (for name)
+font-family: 'IBM Plex Sans', sans-serif; - for items*/
+h2{
+    position: absolute;
+    font-family: 'Lobster', cursive;
+    font-size: 3vh;
+}
+
 ul{
     position:absolute;
     list-style-type: none;
@@ -7,9 +16,9 @@ ul{
 li{
     position: absolute;
     background: aliceblue;
-    font-size: larger;
+    font-size: 2vh;
     padding: 40px 40px;
-    width: 100px;
     border-radius: 100%;
     text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
