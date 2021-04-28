@@ -1,15 +1,36 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <ul id = "list">
-            <li><a href="www.google.com">Home</a></li>
-            <li><a>About</a></li>
-            <li><a>Projects</a></li>
-            <li><a>Interests</a></li>
-        </ul>
-        <h2 id = "header">Aparna Rajeev</h2>
-        <script src = "script.js"></script>
+        <div class = "grid-container">
+            <!-- two columns -->
+            <div class = "left-container">
+                <div class = "header-name">
+                    <h2>Aparna Rajeev</h2>
+                </div>
+                <div class="links">
+                    <div class = "flexbox-wrapper">
+                        <a><i class="fab fa-github"></i></a>
+                        <a><i class="fab fa-linkedin-in"></i></a>
+                        <a><i class="fab fa-codepen"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class = "right-container">
+                <div><a>About</a></div>
+                <div><a>Education</a></div>
+                <div><a>Projects</a></div>
+                <div><a>Favourite animals</a></div>
+            </div>
+            <!-- <div id = "about"><h2>about</h2></div>
+            <div id = "projects"><h2>projects</h2></div>
+            <div id="resume">Resume</div>
+            <div id = "footer">github</div>
+            <div id = "name">Aparna Rajeev</div> -->
+        </div>
+
+        <script src="https://kit.fontawesome.com/bee90c5caa.js" crossorigin="anonymous"></script>
     </body>
-    </html>
+</html>
