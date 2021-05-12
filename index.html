@@ -1,36 +1,75 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="styles.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+      <link rel="stylesheet" href="styles.css">
+      <title>Aparna's website</title>
     </head>
     <body>
-        <div class = "grid-container">
-            <!-- two columns -->
-            <div class = "left-container">
-                <div class = "header-name">
-                    <h2>Aparna Rajeev</h2>
-                </div>
-                <div class="links">
-                    <div class = "flexbox-wrapper">
-                        <a><i class="fab fa-github"></i></a>
-                        <a><i class="fab fa-linkedin-in"></i></a>
-                        <a><i class="fab fa-codepen"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class = "right-container">
-                <div><a>About</a></div>
-                <div><a>Education</a></div>
-                <div><a>Projects</a></div>
-                <div><a>Favourite animals</a></div>
-            </div>
-            <!-- <div id = "about"><h2>about</h2></div>
-            <div id = "projects"><h2>projects</h2></div>
-            <div id="resume">Resume</div>
-            <div id = "footer">github</div>
-            <div id = "name">Aparna Rajeev</div> -->
+      <div class ="text-wrapper">
+        <div class='text'>Click the home button to begin.</div> 
+        <div class="socials"> 
+          <a class = "img-link" href = "https://codepen.io/ParnaHere" target="_blank"><img class="social-img" src="images/codepen.svg"></a>
+          <a class = "img-link" href = "https://github.com/parna86" target="_blank"><img class="social-img" src="images/github.svg"></a>
+          <a class = "img-link" href = "https://www.linkedin.com/in/aparna-rajeev/" target="_blank"><img class="social-img" src="images/linkedin.svg"></a>
         </div>
+      </div>
+        <div class="mobile-wrapper">
+          <div class="mobile-screen">
+            <div class="top-bar">
+              <span class="material-icons">
+                battery_std
+                </span>
+                
+            </div>
+            <div class="inside-mobile-screen about">
+              <h2>Hi, I'm Aparna.</h2>
+              <div class = "image-wrapper">
+                <img src="images/my_face.jpeg">
+              </div>
+              <p>I am a third year undergraduate student at
+                   the University of Edinburgh. I am currently 
+                   pursing a BEng (Hons) degree in 
+                   <a href="http://www.drps.ed.ac.uk/20-21/dpt/utaisen.htm">Artificial Intelligence and Software Engineering</a>.
+                   <br> <br>
+                   I grew up in the city of Dubai ("where everyone has taken a connecting flight
+                   atleast once!"), but I am originally from Kerala. 
+            </p>
+            <a onclick = "moveForward('about')"><span class = "arrow">&rrarr;</span></a>
+            </div>
 
-        <script src="https://kit.fontawesome.com/bee90c5caa.js" crossorigin="anonymous"></script>
-    </body>
+            <div class="inside-mobile-screen interests">
+              <h2>My interests</h2>
+              <p>Front-end development is what I enjoy doing and I would like to pursue it as a full-time role. 
+                I use <a href="https://codepen.io/ParnaHere" target="_blank">CodePen</a> to sharpen my skills. <br> <br> 
+                 Outside tech, I play chess as a hobby. I also love watching TV shows like the <a class="michael">Office</a> and Modern Family! <br>
+                 I am a part of <a href = "https://edinburgh-hoppers.github.io/website/team" target="_blank">the Edinburgh Hoppers</a> as well, and love the work I do as the Head of Tech and 
+                 Website Coordinator.  
+              </p>
+              <a onclick = "moveBack('interests')"><span class = "arrow">	&llarr;</span></a>
+              <a onclick = "moveForward('interests')"><span class = "arrow">&rrarr;</span></a>  
+              <!-- <img class ="michael" src="images/Untitled design.png">  -->
+            </div>
+
+            <div class="inside-mobile-screen projects">
+              <h2>Projects</h2>
+              <p>My favourite project by far is the <a src ="https://blocksrunning.web.app/" target="_blank">Block that Runs Away</a> game.
+                It was my first real project that I had completed on my own, and now that I look back at it, taught me a lot 
+                with respect to front-end development. 
+                <br><br>
+                Other projects I've worked on is the <a src="https://github.com/SDP-Group-1/oli" target="_blank">O.L.I.</a> medical assistance robot, an <a src = "https://github.com/parna86/ilp_cw2" target="_blank">autonomous drone</a> simulation and
+                a website for my <a src="https://favourite-quotes-288820.web.app/" target="_blank">favourite TV show</a> quotes (in progress).
+              </p>
+              <a onclick = "moveBack('projects')"><span class = "arrow">	&llarr;</span></a>
+              <a onclick = "moveForward('projects')"><span class = "arrow">&rrarr;</span></a>   
+            </div>
+
+          </div>   
+          <div class="button">&#9633;</div>
+          
+        </div>
+        <div class="footer"><p>Created by Aparna Rajeev</p></div>
+        <div style="display:none">Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        <script src="script.js"></script>
+      </body>
 </html>

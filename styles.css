@@ -1,104 +1,239 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
 :root{
-    --orange: #FF9F1C;
-    --raisin-black: #1D1E2C;
-    --aero-blue: #B8F2E6;
-    --hookers-green: #357266;
-    --light-brown: #F3B47C;
+  --phone-border: #FF715B;
 }
 
 body{
-    margin:0;
-    font-family: 'Ubuntu Condensed', sans-serif;
+  margin: 0;
+  display:grid;
+  grid-template-columns: 40vw 60vw;
+  height:100vh;
+  place-items: center;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.grid-container{
-    display:grid;
-    grid-template-columns: 50vw 50vw;
-    grid-template-rows: 100vh;
-    grid-template-areas: "left right";
-   
+.mobile-wrapper{
+  display:grid;
+  grid-template-rows: 5vh 80vh 5vh;
+  grid-template-areas: 'camera' 'screen' 'button';
+  place-items: center;
+  height: 90vh;
+  width: 40vh;
+  background: #444;
+  border-radius: 10% / 5%;
+  border: #FF715B solid 4px;
+  box-shadow: inset -2px 0px 0px rgba(200,200,200,0.5), 
+              inset  2px 0px 0px rgba(200,200,200,0.5);
 }
 
-.left-container{
-    display:grid;
-    grid-area: left;
-    grid-template-rows: 1fr 1fr;
-    background: var(--raisin-black);
+.text-wrapper{
+  justify-self: center; /*why is this not working without text-align?*/
+  text-align:center;
+  align-self:center;
+  font-size: 5vmax;
+  width: 40vw;
+  /* text-wrap: wrap; */
 }
 
-.header-name{
-    justify-self: center;
-    align-self:flex-end;
-    font-size: 5rem;
-    color: var(--aero-blue);
+.text{
+  width : 50vw;
 }
 
-.header-name h2:hover{
-    background: url(water.jpeg);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+.socials{
+  display:none;
 }
 
-.links{
-    display:grid;
-    justify-self:stretch;
-    justify-items:center;
-    color: var(--aero-blue)
+.social-img{
+  padding: 1vh;
+  width: 10vmax;
+  height: 10vmax;
+  color: #333;
+  transition: transform 0.5s;
 }
 
-.flexbox-wrapper{
-    display:flex;
-    width: 70%;
-    justify-content: space-around;
-    font-size: 4rem;
-    
+
+
+.social-img:hover{
+  transform: scale(1.03);
+  transition: transform 0.4s;
+}
+.image-wrapper{
+  justify-self: center;
+  height: 30vmin;
+  width: 30vmin;
+  margin: 0;
+  overflow:hidden;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: transparent;
 }
 
-.right-container{
-    display:grid;
-    grid-area: right;
-    grid-template-columns:10px auto;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    border-left: 2px solid black;
-    background-color: var(--aero-blue);
+.image-wrapper img{
+  height: calc(30vmin - 4px);
+  width: auto;
+  transition: transform 1s;
 }
 
-.right-container div{
-    /*to skip the tiny 10px column */
-    grid-column-start: 2;
-    font-size: 4rem;
+.image-wrapper img:hover{
+  transform: scale(1.1);
+  transition: transform 1s;
+}
 
-    /*to make sure each div filled the cell*/
-    align-self: stretch;
-    justify-self: stretch;
+/*button*/
+.button{
+  display:flex;
+  place-content: center;
+  align-items:center;
+  grid-area: button;
+  width: 3.5vh;
+  height: 3.5vh;
+  border-radius: 50%;
+  background-color: #333;
+  color: #bbb;
+  border-left: 1px solid rgba(200,200,200,0.4);
+  border-right: 1px solid rgba(200,200,200,0.4);
+  z-index: 2;
+  font-size: 3vmin;
+/*   box-shadow: inset 2px 2px 2px #888; */
+}
+.button::after{
+    content:'';
+    position:absolute;
+    grid-area: button;
+    border: 2px dashed #FFA799; 
+    border-radius: 50%;
+    width: 4vh;
+    height: 4vh;
+    animation: button-highlight 500ms infinite alternate;
+    z-index: 0;
+  }
+  .button.invisible::after{
+    display:none;
+  }
 
-    /*to align the a tags in each div*/
-    display: flex;
-    align-items: center;
+.mobile-screen{
+  background: #fff;
+  height: 80vh;
+  width: 35vh;
+  grid-area: screen;
+  display:grid;
+  grid-template-rows: 0.2fr 7.8fr;
+  grid-template-areas: 'topbar' 'content';
+  place-items: center;
+  overflow: hidden;
+}
+
+.top-bar{
+  background-color: #eee;
+  width: 35vh;
+  grid-area: topbar;
+  display: flex;
+  justify-items: end;
+}
+
+.inside-mobile-screen{
+  /*accounting for padding*/
+  height: 76vh;
+  width: 35vh;
+  grid-area: content;
+  text-align: center;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255, 113, 91, 0.4), rgba(0,0,0,0)), 
+    radial-gradient(circle at 30% 80%, rgba(255, 15, 123, 0.3), rgba(0,0,0,0)),
+    radial-gradient(circle at 80% 50%, rgba(255, 214, 92, 0.5), rgba(0,0,0,0)),
+    radial-gradient(#eee, #eee);
+    overflow-y: scroll;
+}
+
+.about, .interests, .projects{
+  position:relative;
+  padding: 1vh;
+  left: 40vh;
+  transition: left 0.7s ease-out;
+  font-size: 2vmin;
+}
+
+p{
+  text-align:left;
+  padding-left: 1vh;
+  padding-right: 1vh;
+}
+
+.footer{
+  position: fixed;
+  font-size: 12pt;
+  width: 100vw;
+  
+  color: #ddd;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.footer p::selection{
+  background: #FF715B;
+  color: #444;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  background-image: linear-gradient(to bottom, #d2664b 0%, #d2664b 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 4px;
+  transition: background-size .2s;
+}
+
+.img-link{
+  background: none;
 }
 
 a:hover{
-    opacity: 0.7;
+  background-size: 4px 100px;
+  transition: background-size .6s;
 }
 
-/* #about{
-    grid-area: about;
+
+/*ICON STYLES*/
+
+.arrow{
+  font-size: 2vw;
+  margin-bottom: 1vh;
+  transition: transform 2s;
 }
 
-#projects{
-    grid-area:projects;
-    animation:moving 10s ease-in alternate infinite;
+.material-icons{
+  transform: rotateZ(90deg);
 }
 
-#name{
-    grid-area:name;
+
+/*ANIMATIONS*/
+
+@keyframes button-highlight{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.25);
+  }
 }
 
-#resume{
-    grid-area: resume;
-}
-
-#footer{
-    grid-area: footer;
+/* @keyframes phone-drop{
+  0%{
+    transform: rotateX(0deg) scale(0.3);
+  }
+  30%{
+    transform: rotateX(50deg) scale(0.31);
+  }
+  60%{
+    transform: rotateX(-10deg) scale(0.30);
+  }
+  80%{
+    transform: rotateX(10deg) scale(0.31);
+  }
+  100%{
+    transform: rotateX(0deg) scale(0.30);
+  }
 } */

@@ -1,49 +1,74 @@
-var listObjects = document.getElementsByTagName('li');
-let listDegrees = [0, 90, 180, 270];
-var header = document.getElementById('header');
-// console.log(listObjects[0].innerHTML);
-// console.log(list.classList);
-// var listPosition = list.getBoundingClientRect();
+var nextScreens = {
+  'about': 'interests',
+  'interests': 'projects'
+  
+};
 
-// console.log(listPosition.top);
-// console.log(listPosition.left);
-let h = window.innerWidth/2-100;
-let k = window.innerHeight/2-200;
-let r = h/3;
+var prevScreens = {
+  'interests': 'about',
+  'projects':'interests'
+}
+//  JSON does not guarantee order - change to array or use linked list
+var body = document.getElementsByTagName('body')[0];
+var homeButton = document.getElementsByClassName('button')[0];
+var about = document.getElementsByClassName('about')[0];
+var textSegment = document.getElementsByClassName('text-wrapper')[0];
+var socials = document.getElementsByClassName('socials')[0];
+var count = 0;
+homeButton.onclick = () => {
+  if(count != 0){
+    return false;
+  }
+  homeButton.classList.add("invisible");
+  about.style.left="0px";
+  // textSegment.style.opacity="0";
+  
+  textSegment.style.transition ="transform 2s, opacity 1s";
+  textSegment.style.transform = "scale(0)";
+  textSegment.style.opacity = "0";
+  homeButton.disabled = true;
+  count++;
+  // textSegment.innerHTML = "";
+  // textSegment.style.opacity="1";
+};
 
-header.style.top = k;
-header.style.left = h-r/8;
-console.log(header.style.top);
-console.log(k);
-console.log(h);
-// console.log("Radius = ",r);
-for(let i = 0; i < listObjects.length; i++){
-    element = listObjects[i];
-    let top = k + (r*Math.sin(degree_to_radians(listDegrees[i])));
-    let left = h + (r*Math.cos(degree_to_radians(listDegrees[i])));
-    element.style.top = top;
-    element.style.left = left;
-    console.log('For ', element.innerHTML);
-    console.log('Angle ', (i*90));
-    console.log("Top: ",top, ", Left: ", left);
+function moveForward(currentScreen){
+  // var current = document.getElementsByClassName(currentScreen)[0];
+  // console.log(currentScreen);
+  console.log(currentScreen);
+  if(currentScreen == "projects"){
+    var mobile = document.getElementsByClassName('mobile-wrapper')[0];
+    console.log(mobile);
+   
+    mobile.style.transition = "transform 2s";
+    mobile.style.transform = "rotateZ(1080deg) scale(0.3) translateX(3px)";
+    textSegment.style.transition ="transform 3s, opacity 2s";
+    // body.style.gridTemplateColumns = "50vw 50vw";
+    // body.style.transition = "grid-template-columns 2s";
+    textSegment.style.transform = "scale(1)";
+    textSegment.style.width = "50vw";
+    textSegment.style.opacity = "1";
+    textSegment.style.marginLeft = "10vw";
+    document.getElementsByClassName('text')[0].innerHTML = "You can find me on:";
+    console.log(socials);
+    socials.style.display = "block";
 
-    
+  }
+  else{
+    var next = nextScreens[currentScreen];
+    // console.log(next);
+    var nextScreen = document.getElementsByClassName(next)[0];
+    // current.style.left ="-35vw";
+    nextScreen.style.left = "0px";
+  }
+ 
+  // current.style.visibility="hidden";
+  
+  //add back function :""
+  // current.style.visibility="visible";
 }
 
-setInterval(()=>{
-    for(let i = 0; i < listDegrees.length; i++){
-        listDegrees[i] += 0.20;
-        element = listObjects[i];
-        let top = k + (r*Math.sin(degree_to_radians(listDegrees[i])));
-        let left = h + (r*Math.cos(degree_to_radians(listDegrees[i])));
-        element.style.top = top;
-        element.style.left = left;
-    }
-}, 25);
-
-function degree_to_radians(deg){
-    var pi = Math.PI;
-    var rad = deg * (pi/180);
-    // console.log(rad)
-    return rad;
+function moveBack(currentScreen){
+  var current = document.getElementsByClassName(currentScreen)[0];
+  current.style.left = "40vh";
 }
