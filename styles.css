@@ -161,6 +161,7 @@ p{
   text-align:left;
   padding-left: 1vh;
   padding-right: 1vh;
+  font-size: 14pt;
 }
 
 .footer{
@@ -186,6 +187,7 @@ a{
   background-repeat: repeat-x;
   background-size: 4px 4px;
   transition: background-size .2s;
+  font-size: 14pt;
 }
 
 .img-link{
@@ -201,8 +203,8 @@ a:hover{
 /*ICON STYLES*/
 
 .arrow{
-  font-size: 2vw;
-  margin-bottom: 1vh;
+  font-size: 18pt;
+  padding-bottom: 50px;
   transition: transform 2s;
 }
 

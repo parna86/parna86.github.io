@@ -33,12 +33,8 @@ homeButton.onclick = () => {
 };
 
 function moveForward(currentScreen){
-  // var current = document.getElementsByClassName(currentScreen)[0];
-  // console.log(currentScreen);
-  console.log(currentScreen);
   if(currentScreen == "projects"){
     var mobile = document.getElementsByClassName('mobile-wrapper')[0];
-    console.log(mobile);
    
     mobile.style.transition = "transform 2s";
     mobile.style.transform = "rotateZ(1080deg) scale(0.3) translateX(3px)";
@@ -50,15 +46,12 @@ function moveForward(currentScreen){
     textSegment.style.opacity = "1";
     textSegment.style.marginLeft = "10vw";
     document.getElementsByClassName('text')[0].innerHTML = "You can find me on:";
-    console.log(socials);
     socials.style.display = "block";
 
   }
   else{
     var next = nextScreens[currentScreen];
-    // console.log(next);
     var nextScreen = document.getElementsByClassName(next)[0];
-    // current.style.left ="-35vw";
     nextScreen.style.left = "0px";
   }
  
