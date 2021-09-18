@@ -168,6 +168,8 @@ p{
   position: fixed;
   font-size: 12pt;
   width: 100vw;
+  top: 0;
+  left: 0;
   
   color: #ddd;
   font-family: 'Ubuntu', sans-serif;
