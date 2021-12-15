@@ -21,15 +21,11 @@ homeButton.onclick = () => {
   }
   homeButton.classList.add("invisible");
   about.style.left="0px";
-  // textSegment.style.opacity="0";
-  
   textSegment.style.transition ="transform 2s, opacity 1s";
   textSegment.style.transform = "scale(0)";
   textSegment.style.opacity = "0";
   homeButton.disabled = true;
   count++;
-  // textSegment.innerHTML = "";
-  // textSegment.style.opacity="1";
 };
 
 function moveForward(currentScreen){
@@ -39,8 +35,6 @@ function moveForward(currentScreen){
     mobile.style.transition = "transform 2s";
     mobile.style.transform = "rotateZ(1080deg) scale(0.3) translateX(3px)";
     textSegment.style.transition ="transform 3s, opacity 2s";
-    // body.style.gridTemplateColumns = "50vw 50vw";
-    // body.style.transition = "grid-template-columns 2s";
     textSegment.style.transform = "scale(1)";
     textSegment.style.width = "50vw";
     textSegment.style.opacity = "1";
@@ -54,11 +48,6 @@ function moveForward(currentScreen){
     var nextScreen = document.getElementsByClassName(next)[0];
     nextScreen.style.left = "0px";
   }
- 
-  // current.style.visibility="hidden";
-  
-  //add back function :""
-  // current.style.visibility="visible";
 }
 
 function moveBack(currentScreen){
